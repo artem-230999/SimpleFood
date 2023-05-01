@@ -6,16 +6,16 @@
 
 // header
 .header {
-	padding: 60px 0;
+	padding: 59px 0;
 	background-color: $silver-100;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
   transition: background-color 0.3s, padding 0.4s;
 	
 	&--fixed {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		z-index: 10;
 		padding: 20px 0;
 	}
 }
@@ -29,7 +29,7 @@
 	&__list {
 		margin-left: auto;
 		display: flex;
-		margin-right: 62px;
+		margin-right: 52px;
 	}
 
 	&__item:not(:last-child) {
@@ -39,20 +39,11 @@
 	&__link {
 		font-size: 18px;
 		line-height: 1.2px;
-		transition: color 0.3s, text-shadow 0.3s;
+		transition: color 0.3s, box-shadow 0.3s, text-shadow 0.3s;
 
-		&:hover {
+		&--active {
 			color: $orange-900;
 		}
-
-		&:active {
-			color: #31352B;
-			text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
-		}
-	}
-
-	&__link--active {
-		color: $orange-900;
 	}
 }
 
@@ -130,10 +121,11 @@
 
 // footer
 .footer {
+	padding-top: 60px;
+
 	&__top {
 		display: flex;
-		border-bottom: 1px solid rgba($gray, 0.2);
-		padding-bottom: 71px;
+		padding-bottom: 70px;
 	}
 
 	&__form-inner {
@@ -208,7 +200,8 @@
 	}
 
 	&__bottom {
-		padding: 30px 0;
+		padding: 31px 0 30px;
+		border-top: 1px solid rgba($gray, 0.2);
 		font-size: 14px;
 		line-height: 1;
 		text-align: center;
@@ -228,7 +221,7 @@
 	}
 
 	&__list-item:not(:last-child) {
-		margin-bottom: 20px;
+		margin-bottom: 12px;
 	}
 
 	&__list-link {
@@ -291,6 +284,8 @@
 
 // Section Top
 .top {
+	padding: 160px 0 60px;
+
 	&__inner {
 		background-image: url('../images/top-bg.png');
 		background-position: right center;
@@ -325,14 +320,14 @@
 
 	&__btn {
 		padding: 12px 32px;
-		align-self: flex-start;
+		letter-spacing: 0.03em;
 		margin-right: 34px;
 	}
 
 	&__link {
 		color: $darkBlue-900;
 		text-decoration: underline;
-		transition: color 0.3s, text-shadow 0.3s, text-decoration 0.3s;
+		transition: color 0.3s, text-shadow 0.3s, text-decoration 0.3s, box-shadow 0.3s;
 
 		&:focus {
 			text-decoration: underline transparent;
@@ -340,13 +335,6 @@
 
 		&:hover {
 			text-decoration: underline transparent;
-			color: $orange-900;
-		}
-
-		&:active {
-			color: #31352B;
-			text-decoration: underline transparent;
-			text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
 		}
 	}
 }
@@ -370,17 +358,15 @@
 		background: #FFFFFF;
 		box-shadow: 0px 0px 0px 1px #ECECEC;
 		border-radius: 5px;
-		border: 1px solid $gray;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		height: 299px;
 		text-align: center;
-		transition: border 0.3s, transform 0.3s;
+		transition: box-shadow 0.4s;
 
 		&:hover {
-			border: 1px solid $orange-900;
-			transform: scale(1.1);
+			box-shadow: 0px 0px 0px 1px $orange-900;
 		}
 	}
 
@@ -413,7 +399,7 @@
 		margin: 0 auto;
 		text-decoration: underline;
 		color: $darkBlue-900;
-		transition: color 0.3s, text-shadow 0.3s, text-decoration 0.3s;
+		transition: color 0.3s, text-shadow 0.3s, text-decoration 0.3s, box-shadow 0.3s;
 
 		&:focus {
 			text-decoration: underline transparent;
@@ -421,13 +407,6 @@
 
 		&:hover {
 			text-decoration: underline transparent;
-			color: $orange-900;
-		}
-
-		&:active {
-			color: #31352B;
-			text-decoration: underline transparent;
-			text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
 		}
 	}
 }
@@ -442,7 +421,10 @@
 	}
 
 	&__btn {
+		padding: 13px 32px;
+		@extend %rubik-regular;
 		font-size: 20px;
+		letter-spacing: 1;
 		color: $darkBlue-900;
 		background-color: #fff;
 		box-shadow: 0 0 0 1px $silver-200;

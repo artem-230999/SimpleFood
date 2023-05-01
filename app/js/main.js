@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	$(window).scroll(function () {
 		let scroll = $(window).scrollTop();
-		if (scroll > 500) {
+		if (scroll > 50) {
 			$(".header").addClass("header--fixed");
 		}
 		else {
